@@ -11,8 +11,8 @@ def calc_account(m):
         return base
     
     else: #1701以上なら 初乗り運賃 + 超過分を足して 返す
-        ex = 1 + (m - 1701) // 315 # どれだけ超過しているかの計算
-        return base + 80 * ex
+        ex = (1 + (m - 1701) // 315) * 80 # どれだけ超過金の計算
+        return base + ex
 
 
 if __name__ == "__main__":
