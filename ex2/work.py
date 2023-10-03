@@ -2,7 +2,18 @@ from math import ceil
 
 def calc_account(m):
     # 実装は入れていません、自分で入れてください
-    pass
+    base = 610 # 初乗り運賃
+
+    if m <= 0: # 0m以下なら None を返す
+        return None
+    
+    elif 0 <= m <= 1700: # 0以上1700以下なら 初乗り運賃 を返す
+        return base
+    
+    else: #1701以上なら 初乗り運賃 + 超過分を足して 返す
+        ex = 1 + (m - 1701) // 315 # どれだけ超過しているかの計算
+        return base + 80 * ex
+
 
 if __name__ == "__main__":
     from argparse import ArgumentParser
